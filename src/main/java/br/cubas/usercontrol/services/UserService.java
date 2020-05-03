@@ -13,5 +13,4 @@ public interface UserService {
 	List<User> findAll();
 
 	boolean createUser(User users);
-
 }

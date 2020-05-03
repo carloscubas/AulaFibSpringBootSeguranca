@@ -1,9 +1,9 @@
 package br.cubas.usercontrol.entities;
 
 public class Role {
-	
+
 	String role;
-	
+
 	public Role(String role) {
 		this.role = role;
 	}
@@ -20,6 +20,4 @@ public class Role {
 	public String toString() {
 		return "Role [role=" + role + "]";
 	}
-
-
 }

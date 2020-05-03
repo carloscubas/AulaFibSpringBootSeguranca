@@ -25,23 +25,16 @@ public class UserRepository {
 		admin.getRoles().add(new Role("BASIC"));
 		admin.getRoles().add(new Role("ADMIN"));
 		users.add(admin);
-
 	}
 
 	public User findByUsername(String username) {
-
 		User user = null;
-
 		for (User u : users) {
-
 			if (u.getUsername().equals(username)) {
 				user = u;
 			}
-
 		}
-
 		System.out.println("lido " + user);
-
 		return user;
 	}
 

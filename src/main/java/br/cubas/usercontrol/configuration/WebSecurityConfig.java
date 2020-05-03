@@ -44,18 +44,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 	}
 
-	/*
-	 * @Override protected void configure(HttpSecurity http) throws Exception { //
-	 * HABILITA O FRAME DO H2-CONSOLE http.headers().frameOptions().disable();
-	 * 
-	 * http.csrf().disable().authorizeRequests().antMatchers(HttpMethod.GET,
-	 * "/user/registration").permitAll() .antMatchers(HttpMethod.POST,
-	 * "/user/registration").permitAll() .antMatchers(HttpMethod.GET,
-	 * "/user/list").hasRole("BASIC") .antMatchers(HttpMethod.GET,
-	 * "/user/listadmin").hasRole("ADMIN").and().formLogin()
-	 * .loginPage("/user/login").permitAll().and().logout().permitAll(); }
-	 */
-
 	@Autowired
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
