@@ -29,7 +29,7 @@ import br.cubas.usercontrol.services.OAuthClientDetailsService;
 @EnableAuthorizationServer
 public class OAuth2Configuration extends AuthorizationServerConfigurerAdapter {
 
-	private static final Logger LOG = LoggerFactory.getLogger(OAuth2Configuration.class);
+	private static final Logger log = LoggerFactory.getLogger(OAuth2Configuration.class);
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
@@ -42,7 +42,7 @@ public class OAuth2Configuration extends AuthorizationServerConfigurerAdapter {
 		return new DefaultWebResponseExceptionTranslator() {
 			@Override
 			public ResponseEntity<OAuth2Exception> translate(Exception e) throws Exception {
-				LOG.info(e.getMessage());
+				log.info(e.getMessage());
 
 				// Carry on handling the exception
 				ResponseEntity<OAuth2Exception> responseEntity = super.translate(e);
