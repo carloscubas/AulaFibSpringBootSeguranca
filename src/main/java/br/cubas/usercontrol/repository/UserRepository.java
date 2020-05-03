@@ -16,15 +16,14 @@ public class UserRepository {
 	List<User> users = new ArrayList<>();
 
 	UserRepository() {
-
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		User basic = new User("teste", passwordEncoder.encode("123456"));
-		basic.getRoles().add(new Role("ROLE_BASIC"));
+		basic.getRoles().add(new Role("BASIC"));
 		users.add(basic);
 
 		User admin = new User("admin", passwordEncoder.encode("123456"));
-		admin.getRoles().add(new Role("ROLE_BASIC"));
-		admin.getRoles().add(new Role("ROLE_ADMIN"));
+		admin.getRoles().add(new Role("BASIC"));
+		admin.getRoles().add(new Role("ADMIN"));
 		users.add(admin);
 
 	}

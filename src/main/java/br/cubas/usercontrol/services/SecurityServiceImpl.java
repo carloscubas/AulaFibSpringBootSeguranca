@@ -50,5 +50,4 @@ public class SecurityServiceImpl implements SecurityService {
 			throw new RuntimeException();
 		}
 	}
-
 }

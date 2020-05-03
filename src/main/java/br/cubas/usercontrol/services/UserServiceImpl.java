@@ -1,6 +1,7 @@
 package br.cubas.usercontrol.services;
 
 import java.util.List;
+import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -28,13 +29,20 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User findByUsername(String username) {
-
 		return userRepository.findByUsername(username);
-
 	}
 
 	@Override
 	public List<User> findAll() {
 		return userRepository.findAll();
+	}
+
+	@Override
+	public boolean createUser(User user) {
+		if (Objects.isNull(findByUsername(user.getUsername()))) {
+			save(user);
+			return true;
+		}
+		return false;
 	}
 }
